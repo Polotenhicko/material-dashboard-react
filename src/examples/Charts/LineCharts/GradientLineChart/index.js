@@ -13,13 +13,13 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import { useRef, useEffect, useState, useMemo } from "react";
+import { useRef, useEffect, useState, useMemo } from 'react';
 
 // porp-types is a library for typechecking of props
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 // react-chartjs-2 components
-import { Line } from "react-chartjs-2";
+import { Line } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -30,35 +30,26 @@ import {
   Tooltip,
   Legend,
   Filler,
-} from "chart.js";
+} from 'chart.js';
 
 // @mui material components
-import Card from "@mui/material/Card";
-import Icon from "@mui/material/Icon";
+import Card from '@mui/material/Card';
+import Icon from '@mui/material/Icon';
 
 // Material Dashboard 2 React components
-import MDBox from "components/MDBox";
-import MDTypography from "components/MDTypography";
+import MDBox from 'components/MDBox';
+import MDTypography from 'components/MDTypography';
 
 // Material Dashboard 2 React helper functions
-import gradientChartLine from "assets/theme/functions/gradientChartLine";
+import gradientChartLine from 'assets/theme/functions/gradientChartLine';
 
 // GradientLineChart configurations
-import configs from "examples/Charts/LineCharts/GradientLineChart/configs";
+import configs from 'examples/Charts/LineCharts/GradientLineChart/configs';
 
 // Material Dashboard 2 React base styles
-import colors from "assets/theme/base/colors";
+import colors from 'assets/theme/base/colors';
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
-  Filler
-);
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler);
 
 function GradientLineChart({ icon, title, description, height, chart }) {
   const chartRef = useRef(null);
@@ -75,14 +66,12 @@ function GradientLineChart({ icon, title, description, height, chart }) {
           tension: 0,
           pointRadius: 0,
           borderWidth: 4,
-          borderColor: colors[dataset.color]
-            ? colors[dataset.color || "dark"].main
-            : colors.dark.main,
+          borderColor: colors[dataset.color] ? colors[dataset.color || 'dark'].main : colors.dark.main,
           fill: true,
           maxBarThickness: 6,
           backgroundColor: gradientChartLine(
             chartElement.ctx,
-            colors[dataset.color] ? colors[dataset.color || "dark"].main : colors.dark.main
+            colors[dataset.color] ? colors[dataset.color || 'dark'].main : colors.dark.main
           ),
         }))
       : [];
@@ -100,9 +89,9 @@ function GradientLineChart({ icon, title, description, height, chart }) {
             <MDBox
               width="4rem"
               height="4rem"
-              bgColor={icon.color || "dark"}
+              bgColor={icon.color || 'dark'}
               variant="gradient"
-              coloredShadow={icon.color || "dark"}
+              coloredShadow={icon.color || 'dark'}
               borderRadius="xl"
               display="flex"
               justifyContent="center"
@@ -143,25 +132,16 @@ function GradientLineChart({ icon, title, description, height, chart }) {
 
 // Setting default values for the props of GradientLineChart
 GradientLineChart.defaultProps = {
-  icon: { color: "info", component: "" },
-  title: "",
-  description: "",
-  height: "19.125rem",
+  icon: { color: 'info', component: '' },
+  title: '',
+  description: '',
+  height: '19.125rem',
 };
 
 // Typechecking props for the GradientLineChart
 GradientLineChart.propTypes = {
   icon: PropTypes.shape({
-    color: PropTypes.oneOf([
-      "primary",
-      "secondary",
-      "info",
-      "success",
-      "warning",
-      "error",
-      "light",
-      "dark",
-    ]),
+    color: PropTypes.oneOf(['primary', 'secondary', 'info', 'success', 'warning', 'error', 'light', 'dark']),
     component: PropTypes.node,
   }),
   title: PropTypes.string,

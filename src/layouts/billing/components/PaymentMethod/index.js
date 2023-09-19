@@ -14,22 +14,22 @@ Coded by www.creative-tim.com
 */
 
 // @mui material components
-import Card from "@mui/material/Card";
-import Grid from "@mui/material/Grid";
-import Icon from "@mui/material/Icon";
-import Tooltip from "@mui/material/Tooltip";
+import Card from '@mui/material/Card';
+import Grid from '@mui/material/Grid';
+import Icon from '@mui/material/Icon';
+import Tooltip from '@mui/material/Tooltip';
 
 // Material Dashboard 2 React components
-import MDBox from "components/MDBox";
-import MDTypography from "components/MDTypography";
-import MDButton from "components/MDButton";
+import MDBox from 'components/MDBox';
+import MDTypography from 'components/MDTypography';
+import MDButton from 'components/MDButton';
 
 // Images
-import masterCardLogo from "assets/images/logos/mastercard.png";
-import visaLogo from "assets/images/logos/visa.png";
+import masterCardLogo from 'assets/images/logos/mastercard.png';
+import visaLogo from 'assets/images/logos/visa.png';
 
 // Material Dashboard 2 React context
-import { useMaterialUIController } from "context";
+import { useMaterialUIController } from 'context';
 
 function PaymentMethod() {
   const [controller] = useMaterialUIController();
@@ -42,7 +42,7 @@ function PaymentMethod() {
           Payment Method
         </MDTypography>
         <MDButton variant="gradient" color="dark">
-          <Icon sx={{ fontWeight: "bold" }}>add</Icon>
+          <Icon sx={{ fontWeight: 'bold' }}>add</Icon>
           &nbsp;add new card
         </MDButton>
       </MDBox>
@@ -56,17 +56,16 @@ function PaymentMethod() {
               alignItems="center"
               p={3}
               sx={{
-                border: ({ borders: { borderWidth, borderColor } }) =>
-                  `${borderWidth[1]} solid ${borderColor}`,
+                border: ({ borders: { borderWidth, borderColor } }) => `${borderWidth[1]} solid ${borderColor}`,
               }}
             >
               <MDBox component="img" src={masterCardLogo} alt="master card" width="10%" mr={2} />
               <MDTypography variant="h6" fontWeight="medium">
                 ****&nbsp;&nbsp;****&nbsp;&nbsp;****&nbsp;&nbsp;7852
               </MDTypography>
-              <MDBox ml="auto" lineHeight={0} color={darkMode ? "white" : "dark"}>
+              <MDBox ml="auto" lineHeight={0} color={darkMode ? 'white' : 'dark'}>
                 <Tooltip title="Edit Card" placement="top">
-                  <Icon sx={{ cursor: "pointer" }} fontSize="small">
+                  <Icon sx={{ cursor: 'pointer' }} fontSize="small">
                     edit
                   </Icon>
                 </Tooltip>
@@ -81,17 +80,16 @@ function PaymentMethod() {
               alignItems="center"
               p={3}
               sx={{
-                border: ({ borders: { borderWidth, borderColor } }) =>
-                  `${borderWidth[1]} solid ${borderColor}`,
+                border: ({ borders: { borderWidth, borderColor } }) => `${borderWidth[1]} solid ${borderColor}`,
               }}
             >
               <MDBox component="img" src={visaLogo} alt="master card" width="10%" mr={2} />
               <MDTypography variant="h6" fontWeight="medium">
                 ****&nbsp;&nbsp;****&nbsp;&nbsp;****&nbsp;&nbsp;5248
               </MDTypography>
-              <MDBox ml="auto" lineHeight={0} color={darkMode ? "white" : "dark"}>
+              <MDBox ml="auto" lineHeight={0} color={darkMode ? 'white' : 'dark'}>
                 <Tooltip title="Edit Card" placement="top">
-                  <Icon sx={{ cursor: "pointer" }} fontSize="small">
+                  <Icon sx={{ cursor: 'pointer' }} fontSize="small">
                     edit
                   </Icon>
                 </Tooltip>
