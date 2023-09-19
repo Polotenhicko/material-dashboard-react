@@ -13,9 +13,10 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { store } from 'store/store';
 import App from './App';
 
 // Material Dashboard 2 React Context Provider
@@ -25,9 +26,11 @@ const container = document.getElementById('app');
 const root = createRoot(container);
 
 root.render(
-  <BrowserRouter>
+  <HashRouter>
     <MaterialUIControllerProvider>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </MaterialUIControllerProvider>
-  </BrowserRouter>
+  </HashRouter>
 );
